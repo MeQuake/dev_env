@@ -1,0 +1,21 @@
+FROM node:alpine
+
+MAINTAINER thisbounty.com
+
+VOLUME /mnt
+
+# Install Mean.JS packages
+RUN npm install
+# Update & upgrade software and repository lists
+RUN apk update
+RUN apk upgrade
+# Install software needed by WebRTC-backend
+RUN apk add make
+RUN apk add python
+RUN apk add g++
+RUN apk add git
+RUN npm install -g grunt
+
+# Port 3000 for server
+# Port 35729 for livereload
+EXPOSE 3000 35729
