@@ -25,14 +25,21 @@ According to this: https://github.com/docker/kitematic/issues/574
 <img src="http://i.imgur.com/HOGq31E.png">
 Powershell will be opened. Move to directory where you downloaded the repository or just Dockerfile
 <img src="http://i.imgur.com/Fd4U6jw.png">
-Now let's create our image by executing this command:
+Now let's create our image by executing one of these commands:
 <br>
-`docker build -t img_thisbounty .`
+`docker build -f Dockerfile_front -t img_thisbounty_front .`
+<br>
+To build Frontend image or:
+<br>
+`docker build -f Dockerfile_back -t img_thisbounty_back .`
+<br>
+To build Backend image
+<br>
 <br>
 Now close and launch once again Kitematic.
 4. Creating container
 <br>
-Go to "My Images" and click "CREATE" on our "img_thisbounty" image.
+Go to "My Images" and click "CREATE" on our "img_thisbounty_front" or "img_thisbounty_back image.
 If "My Images" tab is empty, PC restart could be necessary.
 <br>
 <img src="http://i.imgur.com/URl7Vk4.png">
